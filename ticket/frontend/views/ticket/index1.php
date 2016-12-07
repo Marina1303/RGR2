@@ -1,4 +1,4 @@
- <?php use \yii\helpers\html;?>
+ <?php use \yii\helpers\Html;?>
 	<p> Текущая дата <?php  echo  (new\ DateTime($date_1 = date("Y-m-d")))->format('d.m.Y'); ?> </p>
 	<h1 align="center"> Выберите рейс </h1>
 	<table class="table">

@@ -1,4 +1,4 @@
-<?php use \yii\helpers\html;?>
+<?php use \yii\helpers\Html;?>
 	<h1> Пассажиры рейса <?=htmlspecialchars( $flight->number_flight);?> </h1>
 	<table class="table">
 		<tr class="danger">

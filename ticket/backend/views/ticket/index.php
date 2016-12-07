@@ -1,4 +1,4 @@
-<?php use \yii\helpers\html;?>
+<?php use \yii\helpers\Html;?>
 	<h1 > Список поступивших заявок </h1>
 	<table class="table">
 		<tr  class="danger">

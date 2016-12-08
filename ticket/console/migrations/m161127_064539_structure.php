@@ -6,6 +6,8 @@ class m161127_064539_structure extends Migration
 {
     public function up()
     {
+		
+		$hash='$2y$13$AgTZXXM1ET2CVTYCJ8491uzkcGL2uqmvkeJWVX/IOVAQfv3wPbmEK';
 $this->execute(" CREATE TABLE IF NOT EXISTS `city` (
   `id` int(11) NOT NULL,
   `name_city` varchar(200) NOT NULL
@@ -107,6 +109,10 @@ CREATE TABLE IF NOT EXISTS `user` (
   `updated_at` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+
+
+INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Marina1303', 'k1ZBGFbDsNeLOIW5fsZMUEqXPgoX6Ctu', '$hash', NULL, 'pupina3@mail.ru', 10, 1480875757, 1480875757);
 --
 -- Индексы сохранённых таблиц
 --

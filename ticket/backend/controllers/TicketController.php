@@ -177,7 +177,7 @@ class TicketController extends Controller
 			return $this->redirect(['ticket/index11']);
 			}
 		}
-		return $this->render('edit_Flight',['flight'=>$flight,'cities'=>$cities]); 
+		return $this->render('edit_flight',['flight'=>$flight,'cities'=>$cities]); 
 
 		
 	}
@@ -185,6 +185,7 @@ class TicketController extends Controller
 	public function actionAdd_flight($city=null)
 	{
 		$flight=new Flight;
+		$fligh->status=1;
 		$flight->departure_city_id=$city;
 		$flight->arrival_city_id=$city;
 		$cities=City::find()->all();

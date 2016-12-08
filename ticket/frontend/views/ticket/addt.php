@@ -1,6 +1,6 @@
 <?php 
-use yii\bootstrap\activeform;
-use yii\helpers\arrayHelper;
+use yii\bootstrap\ActiveForm;
+use yii\helpers\ArrayHelper;
 ?>
 	<h2> Информация по рейсу:  </h2>
 	<p> Рейс:  <?=htmlspecialchars( $ticket->getFlight()->one()->number_flight)?> </p>

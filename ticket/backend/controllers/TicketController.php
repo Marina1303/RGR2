@@ -185,7 +185,7 @@ class TicketController extends Controller
 	public function actionAdd_flight($city=null)
 	{
 		$flight=new Flight;
-		$fligh->status=1;
+		$flight->status=1;
 		$flight->departure_city_id=$city;
 		$flight->arrival_city_id=$city;
 		$cities=City::find()->all();

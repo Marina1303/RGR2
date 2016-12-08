@@ -1,6 +1,6 @@
 <?php 
-use yii\bootstrap\activeform;
-use yii\helpers\arrayHelper;
+use yii\bootstrap\Activeform;
+use yii\helpers\ArrayHelper;
 ?>
 <h2> Добавить новый рейс </h2>
 	<?php  $form=ActiveForm::begin();?>

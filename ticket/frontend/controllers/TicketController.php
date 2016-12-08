@@ -62,7 +62,7 @@ class TicketController extends Controller
 	{
 		$ticket=Ticket::findOne($id);
 		if (!$ticket) {
-			return 'билет найден';
+			throw new \yii\web\NotFoundHttpException('Билет не найден');
 		} 
 		if (isset($_POST['Ticket'])) {
 			$ticket->attributes=$_POST['Ticket'];

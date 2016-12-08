@@ -31,7 +31,7 @@ class TicketController extends Controller
                     [
                         // выход из системы только для зарегистрированного пользователя
                         'actions' => ['logout','index11','indexc','add_city','addt','addt_success','edit_flight','index','index_cancel',
-						'index_opl','pass','editt','add_flight','delete_flight','delete','delete_city'],
+						'index_opl','pass','editt','add_flight','delete_flight','delete','delete_city','edit_city'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -54,7 +54,7 @@ class TicketController extends Controller
 	public function actionEditt($id) {
 		$ticket=Ticket::findOne($id);
 		if (!$ticket) {
-			return 'билет найден';
+			throw new \yii\web\NotFoundHttpException('Билет не найден');
 		} 
 		
 		if (isset($_POST['Ticket'])) {
@@ -88,7 +88,7 @@ class TicketController extends Controller
 	public function actionEdit_city($id) {
 		$city=City::findOne($id);
 		if (!$city) {
-			return 'город найден';
+			throw new \yii\web\NotFoundHttpException('Город не найден');
 		} 
 		if (isset($_POST['City'])) {
 			$city->attributes=$_POST['City'];
@@ -103,10 +103,11 @@ class TicketController extends Controller
 	{
 		$city=City::findOne($id);
 		if (!$city) {
-			return 'Город найден';
+			throw new \yii\web\NotFoundHttpException('Город не найден');
 		}
 		$city->delete();
 		return $this->redirect(['ticket/indexc']);
+		
 	}		
 	
 	
@@ -123,7 +124,7 @@ class TicketController extends Controller
 	{
 		$ticket=Ticket::findOne($id);
 		if (!$ticket) {
-			return 'Билет найден';
+			throw new \yii\web\NotFoundHttpException('Билет не найден');
 		}
 		$ticket->delete();
 		return $this->redirect(['ticket/index']);
@@ -167,7 +168,7 @@ class TicketController extends Controller
 	{
 		$flight=Flight::findOne($id);
 		if (!$flight) {
-			return 'рейс найден';
+			throw new \yii\web\NotFoundHttpException('Рейс не найден');
 		} 
 		$cities=City::find()->all();
 		if (isset($_POST['Flight'])) {
@@ -200,7 +201,7 @@ class TicketController extends Controller
 	{
 		$flight=Flight::findOne($id);
 		if (!$flight) {
-			return 'Рейс найден';
+			throw new \yii\web\NotFoundHttpException('Рейс не найден');
 		}
 		$flight->delete();
 		return $this->redirect(['ticket/index11']);

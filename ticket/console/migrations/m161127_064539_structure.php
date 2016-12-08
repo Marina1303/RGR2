@@ -58,25 +58,7 @@ INSERT INTO `flight` (`id`, `number_flight`, `date_departure`, `status`, `depart
 
 -- --------------------------------------------------------
 
---
--- Структура таблицы `migration`
---
 
-CREATE TABLE IF NOT EXISTS `migration` (
-  `version` varchar(180) NOT NULL,
-  `apply_time` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `migration`
---
-
-INSERT INTO `migration` (`version`, `apply_time`) VALUES
-('m000000_000000_base', 1478920576),
-('m130524_201442_init', 1478920599),
-('m161127_064539_structure', 1480229288);
-
--- --------------------------------------------------------
 
 --
 -- Структура таблицы `ticket`
@@ -145,11 +127,7 @@ ALTER TABLE `flight`
   ADD KEY `departure_city_id` (`departure_city_id`),
   ADD KEY `arrival_city_id` (`arrival_city_id`);
 
---
--- Индексы таблицы `migration`
---
-ALTER TABLE `migration`
-  ADD PRIMARY KEY (`version`);
+
 
 --
 -- Индексы таблицы `ticket`

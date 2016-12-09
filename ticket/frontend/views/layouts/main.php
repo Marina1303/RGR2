@@ -41,7 +41,7 @@ AppAsset::register($this);
     ];
     if (Yii::$app->user->isGuest) {
        
-        $menuItems[] = ['label' => 'Войти', 'url' => ['/site/login']];
+      
     } else {
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')

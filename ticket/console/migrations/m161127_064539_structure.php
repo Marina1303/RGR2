@@ -93,22 +93,6 @@ INSERT INTO `ticket` (`id`, `first_name`, `last_name`, `date_birth`, `flight_id`
 
 -- --------------------------------------------------------
 
---
--- Структура таблицы `user`
---
-
-CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `auth_key` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  `password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `status` smallint(6) NOT NULL DEFAULT '10',
-  `created_at` int(11) NOT NULL,
-  `updated_at` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 
 
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
@@ -143,13 +127,7 @@ ALTER TABLE `ticket`
   ADD KEY `flight_id` (`flight_id`);
 
 --
--- Индексы таблицы `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `password_reset_token` (`password_reset_token`);
+-- 
 
 --
 -- AUTO_INCREMENT для сохранённых таблиц
@@ -171,10 +149,9 @@ ALTER TABLE `flight`
 ALTER TABLE `ticket`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
--- AUTO_INCREMENT для таблицы `user`
+-- 
 --
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --

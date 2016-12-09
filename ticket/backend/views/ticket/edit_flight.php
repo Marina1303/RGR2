@@ -9,5 +9,5 @@ use yii\helpers\ArrayHelper;
 		<?=$form->field($flight,'date_departure')?>
 		<?=$form->field($flight,'departure_city_id')->listbox(arrayHelper::map($cities,'id','name_city'))?>
 		<?=$form->field($flight,'arrival_city_id')->listbox(arrayHelper::map($cities,'id','name_city'))?>
-		<button class="btn btn-primary" type="submit"> Добавить </button>
+		<button class="btn btn-primary" type="submit"> Сохранить </button>
 	<?php  ActiveForm::end(); ?>

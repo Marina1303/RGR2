@@ -9,5 +9,5 @@ use yii\helpers\ArrayHelper;
 		<?=$form->field($ticket,'date_birth')?>
 		<?=$form->field($ticket,'phone_number')?>
 		<?=$form->field($ticket,'status_ticket')->listbox([0=>"Отказ",1=>"Заявка",2=>"Оплачен"])?>
-		<button class="btn btn-primary" type="submit"> Добавить </button>
+		<button class="btn btn-primary" type="submit"> Сохранить </button>
 	<?php  ActiveForm::end(); ?>

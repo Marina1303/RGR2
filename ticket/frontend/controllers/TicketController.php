@@ -44,17 +44,23 @@ class TicketController extends Controller
 		return $this->render('indexc',['city'=>$city]);
 	}
 	
+	
+	
 	public function actionAddt($flight) 
 	{
+		$fl=Flight::findOne($flight);
+		if (!$fl) {
+			throw new \yii\web\NotFoundHttpException('Рейс не найден');
+		} 
 		$ticket=new Ticket;
 		$ticket->flight_id=$flight;
-			if (isset($_POST['Ticket'])) {
+				if (isset($_POST['Ticket'])) {
 				$ticket->attributes=$_POST['Ticket'];
 				If ($ticket->save()) {
 					return $this->render('addt_success',['ticket'=>$ticket]); //статичная страница
 				}
 			}
-			return $this->render('addt',['ticket'=>$ticket]);	
+			return $this->render('addt',['ticket'=>$ticket],['fl'=>$fl]);	
 	}
 	
 	
